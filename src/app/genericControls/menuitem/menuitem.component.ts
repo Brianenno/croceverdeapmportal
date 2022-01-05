@@ -14,12 +14,10 @@ export class MenuitemComponent implements OnInit {
 
   public routerLink:string = "";
   public itemLabel:string = "";
-  public iconName:string = "home";
 
   ngOnInit(): void {
     this.routerLink = this.menuItem.routerLink;
     this.itemLabel = this.menuItem.itemLabel;
-    // this.iconName = this.menuItem.iconName;
   }
 
 }

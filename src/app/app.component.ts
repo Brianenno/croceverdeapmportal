@@ -22,9 +22,12 @@ export class AppComponent {
 
     this.menu = [
       {
-        iconName: "home",
         itemLabel: "Romeo 92",
-        routerLink: ""
+        routerLink: "prova"
+      },
+      {
+        itemLabel: "Romeo 92",
+        routerLink: "prova"
       }
     ];
   }

@@ -1,31 +1,29 @@
 <div class="container">
 
   <mat-toolbar class="mat-elevation-z8">
-      <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
-          <mat-icon *ngIf="!sidenav.opened">
-              menu
-          </mat-icon>
-          <mat-icon *ngIf="sidenav.opened">
-              close
-          </mat-icon>
-      </button>
-      Responsive side navigation
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened">
+        menu
+      </mat-icon>
+      <mat-icon *ngIf="sidenav.opened">
+        close
+      </mat-icon>
+    </button>
+    Responsive side navigation
   </mat-toolbar>
 
   <mat-sidenav-container>
-      <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
-
-          <app-menuitem>
-            *ngFor="let menuitem of menu"
-            [menuitem]="menuitem"
-          </app-menuitem>
-
-      </mat-sidenav>
-      <mat-sidenav-content>
-          <div class="content mat-elevation-z8">
-            <router-outlet></router-outlet>
-          </div>
-      </mat-sidenav-content>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+      <app-menuitem
+        *ngFor="let menuitem of menu"
+        [menuItem]="menuitem" >
+      </app-menuitem>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="content mat-elevation-z8">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
   </mat-sidenav-container>
 
 </div>
