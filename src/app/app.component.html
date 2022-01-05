@@ -15,25 +15,10 @@
   <mat-sidenav-container>
       <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
 
-          <button routerLink="prova" mat-button class="menu-button">
-              <mat-icon>home</mat-icon>
-              <span>Home</span>
-          </button>
-          <button routerLink="prova" mat-button class="menu-button">
-              <mat-icon>person</mat-icon>
-              <span>Profile</span>
-          </button>
-          <button routerLink="prova" mat-button class="menu-button">
-              <mat-icon>info</mat-icon>
-              <span>About</span>
-          </button>
-
-          <mat-divider></mat-divider>
-
-          <button mat-button class="menu-button">
-              <mat-icon>help</mat-icon>
-              <span>Help</span>
-          </button>
+          <app-menuitem>
+            *ngFor="let menuitem of menu"
+            [menuitem]="menuitem"
+          </app-menuitem>
 
       </mat-sidenav>
       <mat-sidenav-content>
