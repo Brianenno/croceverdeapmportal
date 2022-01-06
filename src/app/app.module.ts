@@ -14,6 +14,7 @@ import { MatDividerModule } from "@angular/material/divider";
 import { MatListModule } from "@angular/material/list";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { MenuitemComponent } from './genericControls/menuitem/menuitem.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, ProvaProvaComponent, HomeComponent, MenuitemComponent],
@@ -27,7 +28,8 @@ import { MenuitemComponent } from './genericControls/menuitem/menuitem.component
     MatIconModule,
     MatDividerModule,
     MatListModule,
-    MatExpansionModule
+    MatExpansionModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -2,8 +2,9 @@ import { Component, ViewChild } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
 import { delay } from 'rxjs/operators';
-import { MenuItem } from "./models/menuitem.model";
+import { AmbulanceModel } from "./models/ambulance.model";
 import { MenuitemComponent } from "./genericControls/menuitem/menuitem.component"
+import { AmbulanceService } from './services/ambulance.service';
 
 @Component({
   selector: 'app-root',
@@ -12,24 +13,15 @@ import { MenuitemComponent } from "./genericControls/menuitem/menuitem.component
 })
 
 export class AppComponent {
-  public menu: MenuItem[];
+  public ambulances: AmbulanceModel[];
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
 
-  constructor(private observer: BreakpointObserver) {}
+  constructor(private observer: BreakpointObserver,
+    public ambulanceService : AmbulanceService) {}
 
   ngOnInit(): void {
-
-    this.menu = [
-      {
-        itemLabel: "Romeo 92",
-        routerLink: "prova"
-      },
-      {
-        itemLabel: "Romeo 92",
-        routerLink: "prova"
-      }
-    ];
+    this.ambulances = this.ambulanceService.getAll();
   }
 
   ngAfterViewInit() {
