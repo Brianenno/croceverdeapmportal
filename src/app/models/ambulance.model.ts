@@ -1,5 +1,5 @@
 export class AmbulanceModel {
-  id: number;
-  label: string;
-  code: string;
+  Id: number;
+  Label: string;
+  Code: string;
 }

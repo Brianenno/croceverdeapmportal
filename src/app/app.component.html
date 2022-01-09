@@ -15,8 +15,8 @@
   <mat-sidenav-container>
     <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
       <app-menuitem
-        *ngFor="let ambulaceItem of ambulances"
-        [ambulance]="ambulaceItem" >
+        *ngFor="let menuItem of menuItems"
+        [menuItem]="menuItem" >
       </app-menuitem>
     </mat-sidenav>
     <mat-sidenav-content>

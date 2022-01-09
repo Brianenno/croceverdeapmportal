@@ -2,26 +2,23 @@ import { Component, ViewChild } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
 import { delay } from 'rxjs/operators';
-import { AmbulanceModel } from "./models/ambulance.model";
-import { MenuitemComponent } from "./genericControls/menuitem/menuitem.component"
-import { AmbulanceService } from './services/ambulance.service';
+import { MenuItem } from "./models/menuitem.model";
+import { MenuitemsService } from './services/menuitems.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-
 export class AppComponent {
-  public ambulances: AmbulanceModel[];
+  public menuItems: MenuItem[];
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
 
-  constructor(private observer: BreakpointObserver,
-    public ambulanceService : AmbulanceService) {}
+  constructor(private observer: BreakpointObserver, private menuitemsService:MenuitemsService) {}
 
   ngOnInit(): void {
-    this.ambulances = this.ambulanceService.getAll();
+    this.menuItems = this.menuitemsService.getSideNavItems();
   }
 
   ngAfterViewInit() {

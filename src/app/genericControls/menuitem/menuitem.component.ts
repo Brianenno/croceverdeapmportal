@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { AmbulanceModel } from "../../models/ambulance.model";
+import { MenuItem } from "../../models/menuitem.model";
 
 @Component({
   selector: 'app-menuitem',
@@ -8,7 +8,7 @@ import { AmbulanceModel } from "../../models/ambulance.model";
 })
 export class MenuitemComponent implements OnInit {
 
-  @Input("ambulance") ambulance: AmbulanceModel;
+  @Input("menuItem") menuItem: MenuItem;
 
   constructor() { }
 
@@ -16,8 +16,8 @@ export class MenuitemComponent implements OnInit {
   public itemLabel:string = "";
 
   ngOnInit(): void {
-    this.routerLink = "ambulance/" + this.ambulance.code;
-    this.itemLabel = this.ambulance.label;
+    this.routerLink = this.menuItem.routerLink;
+    this.itemLabel = this.menuItem.itemLabel;
   }
 
 }

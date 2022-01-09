@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProvaProvaComponent } from './prova-prova/prova-prova.component';
 import { HomeComponent } from './pages/home/home.component';
+import { AmbulanceMaintenanceComponent } from './pages/ambulances/ambulance-maintenance/ambulance-maintenance.component';
+import { AmbulanceRootComponent } from './pages/ambulances/ambulance-root/ambulance-root.component';
 
 const routes: Routes = [
   {
@@ -9,8 +10,12 @@ const routes: Routes = [
     component:HomeComponent
   },
   {
-    path:'prova',
-    component:ProvaProvaComponent,
+    path:'ambulances',
+    component:AmbulanceRootComponent
+  },
+  {
+    path:'ambulanceMaintenance',
+    component:AmbulanceMaintenanceComponent
   }
 ];
 
